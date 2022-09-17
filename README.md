@@ -62,13 +62,13 @@ Time and Space Complexity:
       - L' = Length of query
   
   Want to give it a try:
-    Just compile and run Main.java file.
-    Sample input:
-       1
-       10 3
-       scalerclasses scalerverse scaler scalertopics scalercontests yahoosports yahoo yahoonews googleimages google
-       8 3 10 5 7 12 15 10 15 18
-       scaler yahoo google
+    - Just compile and run Main.java file.
+    - Sample input:
+       - 1
+       - 10 3
+       - scalerclasses scalerverse scaler scalertopics scalercontests yahoosports yahoo yahoonews googleimages google
+       - 8 3 10 5 7 12 15 10 15 18
+       - scaler yahoo google
   
 
 
