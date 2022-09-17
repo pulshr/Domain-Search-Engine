@@ -62,6 +62,7 @@ Time and Space Complexity:
       - L' = Length of query
   
   Want to give it a try:
+  
     - Just compile and run Main.java file.
     - Sample input:
        - 1
