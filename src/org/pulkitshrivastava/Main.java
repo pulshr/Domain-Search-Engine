@@ -1,6 +1,8 @@
 package org.pulkitshrivastava;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static class DomainNameAndRankPair {
@@ -52,6 +54,44 @@ public class Main {
         return res;
     }
     public static void main(String[] args) {
-
+        Scanner scanner = new Scanner(System.in);
+        int inputCases = scanner.nextInt();
+        while(inputCases>0) {
+            int domainListLength = scanner.nextInt();
+            int queryListLength = scanner.nextInt();
+            String[] domainNamesList = new String[domainListLength];
+            int[] domainRanksList = new int[domainListLength];
+            String[] queryList = new String[queryListLength];
+            for(int i=0;i<domainListLength;i++) {
+                domainNamesList[i] = scanner.next();
+            }
+            for(int i=0;i<domainListLength;i++) {
+                domainRanksList[i] = scanner.nextInt();
+            }
+            for(int i=0;i<queryListLength;i++) {
+                queryList[i] = scanner.next();
+            }
+            DomainNameAndRankPair[] pairs = new DomainNameAndRankPair[domainListLength];
+            for(int i=0;i<domainListLength;i++) {
+                pairs[i] = new DomainNameAndRankPair(domainNamesList[i],domainRanksList[i]);
+            }
+            Arrays.sort(pairs,(DomainNameAndRankPair a, DomainNameAndRankPair b)-> b.domainRank-a.domainRank);
+            TrieNode root = new TrieNode();
+            addDomains(root,pairs);
+            for(int i=0;i<queryListLength;i++) {
+                String[] res = getResults(root,queryList[i],pairs);
+                if(res.length==0) {
+                    System.out.println(-1+" ");
+                } else {
+                    for(int j=0;j<res.length;j++) {
+                        if(res[j]!=null) {
+                            System.out.print(res[j]+" ");
+                        }
+                    }
+                    System.out.println();
+                }
+            }
+            inputCases--;
+        }
     }
 }
