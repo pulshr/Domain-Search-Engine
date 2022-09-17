@@ -35,6 +35,22 @@ public class Main {
             }
         }
     }
+    public static String[] getResults(TrieNode root, String query, DomainNameAndRankPair[] domainsList) {
+        TrieNode curr = root;
+        for(int i=0;i<query.length();i++) {
+            int charInt = query.charAt(i)-'a';
+            if(curr.children[charInt]==null) {
+                return new String[]{};
+            } else {
+                curr = curr.children[charInt];
+            }
+        }
+        String[] res = new String[5];
+        for(int i=0;i<curr.domainIndexes.size();i++) {
+            res[i] = domainsList[curr.domainIndexes.get(i)].domainName;
+        }
+        return res;
+    }
     public static void main(String[] args) {
 
     }
