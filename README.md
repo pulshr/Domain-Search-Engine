@@ -8,6 +8,7 @@ Application Summary:
 Example: 
 
   Registered Domains (with their ranks):
+  
     - scalerclasses(8)
     - scalerverse(3)
     - scaler(10)
@@ -20,6 +21,7 @@ Example:
     - google(18)
     
   Query (3 Strings): 
+  
     - scaler
     - yahoo
     - google
