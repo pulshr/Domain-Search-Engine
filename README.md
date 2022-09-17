@@ -54,7 +54,7 @@ Time and Space Complexity:
   - Searching up data in a trie is faster in the worst case, O(m) time (where m is the length of a search string), compared to an imperfect hash table
   - An imperfect hash table can have key collisions. A key collision is the hash function mapping of different keys to the same position in a hash table
   - The worst-case lookup speed in an imperfect hash table is O(N) time, but far more typically is O(1), with O(m) time spent evaluating the hash.
-    - Overall TC: O(N*L+M*L')
+    - Overall TC: O(N*L*26+M*L'*26)
     - Overall SC: O(N*L*26)
       - N = Number of domains
       - L = Length of domain
