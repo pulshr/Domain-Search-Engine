@@ -19,6 +19,22 @@ public class Main {
             this.domainIndexes = new ArrayList<>();
         }
     }
+    public static void addDomains(TrieNode root, DomainNameAndRankPair[] domainsList) {
+        for(int i=0;i<domainsList.length;i++) {
+            TrieNode curr = root;
+            String domainName = domainsList[i].domainName;
+            for(int j=0;j<domainName.length();j++) {
+                int charInt = domainName.charAt(j)-'a';
+                if(curr.children[charInt]==null) {
+                    curr.children[charInt] = new TrieNode();
+                }
+                curr = curr.children[charInt];
+                if(curr.domainIndexes.size()<5) {
+                    curr.domainIndexes.add(i);
+                }
+            }
+        }
+    }
     public static void main(String[] args) {
 
     }
